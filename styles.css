@@ -273,3 +273,26 @@ section {
     }
   }
 }
+
+.meet-our-team {
+  padding: 30px;
+}
+
+.container_jsd7 {
+  display: grid;
+  gap: 30px;
+  padding: 10px;
+
+  grid-template-columns: repeat(5, 1fr);
+  .jsd7 {
+    background-color: var(--yellow);
+    border-radius: 10px;
+    .jsd7_name {
+      padding: 10px;
+    }
+    img {
+      width: 100px;
+      padding: 0px 10px;
+    }
+  }
+}
