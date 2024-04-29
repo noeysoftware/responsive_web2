@@ -43,6 +43,20 @@ a {
   color: var(--blue);
 }
 
+.button {
+  padding: 10px 30px;
+  background-color: var(--blue);
+  color: var(--base-100);
+  border-radius: 10px;
+  transition: ease 0.3s all;
+  &:hover {
+    background-color: black;
+  }
+  &:active {
+    background-color: red;
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
@@ -144,33 +158,47 @@ section {
   }
 }
 
-.button {
-  padding: 10px 30px;
-  background-color: var(--blue);
-  color: var(--base-100);
-  border-radius: 10px;
-  transition: ease 0.3s all;
-  &:hover {
-    background-color: black;
-  }
-  &:active {
-    background-color: red;
-  }
-}
+/* HERO SECTION */
 
+/* Hero section layout styling with flex */
 .hero {
   display: flex;
   @media (max-width: 1024px) {
     flex-direction: column;
   }
   .hero-first {
-    flex: 1;
-    background-color: var(--blue-100);
-    border-radius: 30px;
-    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1;
+  }
+  .hero-second {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+}
+
+/* Hero section layout styling with grid */
+/* .hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+  .hero-first {
+    display: grid;
+    align-content: center;
+  }
+} */
+
+/* Hero section content styling */
+.hero {
+  .hero-first {
+    background-color: var(--blue-100);
+    border-radius: 30px;
+    padding: 30px;
     .call-to-action {
       margin-top: 20px;
       margin-bottom: 10px;
@@ -181,19 +209,18 @@ section {
     }
   }
   .hero-second {
-    flex: 1;
     background-color: var(--yellow);
     border-radius: 30px;
     padding: 0px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     img {
       object-fit: cover;
     }
   }
 }
 
+/* FEATURED SECTION */
+
+/* Featured section layout styling with flex */
 .featured {
   .burgers {
     display: flex;
@@ -202,27 +229,45 @@ section {
       flex-direction: column;
     }
     article {
-      background-color: var(--yellow);
-      padding: 30px;
-      border-radius: 30px;
       flex: 1;
-      h3 {
-        margin-top: 20px;
-        margin-bottom: 10px;
+    }
+  }
+}
+
+/* Featured section layout styling with grid */
+/* .featured {
+  .burgers {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+} */
+
+/* Featured content styling */
+.featured {
+  article {
+    background-color: var(--yellow);
+    padding: 30px;
+    border-radius: 30px;
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    figure {
+      padding-top: 10%;
+      overflow: hidden;
+      img {
+        transition: ease 3s all;
       }
-      p {
-        margin-bottom: 10px;
-      }
-      figure {
-        padding-top: 10%;
-        overflow: hidden;
+      &:hover {
         img {
-          transition: ease 3s all;
-        }
-        &:hover {
-          img {
-            transform: scale(1.2);
-          }
+          transform: scale(1.2);
         }
       }
     }
