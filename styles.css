@@ -307,3 +307,11 @@ section {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.jsd7_instructors {
+  display: grid;
+  gap: 30px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
